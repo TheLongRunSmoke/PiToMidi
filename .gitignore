@@ -1,0 +1,7 @@
+*
+!/.gitignore
+!README.md
+!/libs
+!/tests
+!*.py
+!pi1000.txt
