@@ -41,3 +41,5 @@ If you want make video for your music, use ```pden.py```. This script generate b
 
 
 ### Have fun!
+
+[Short link](http://git.io/v47Jy)
