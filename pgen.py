@@ -1,4 +1,4 @@
-﻿import sys
+import sys
 from sys import stdout
 from PIL import Image
 from PIL import ImageFont
@@ -6,38 +6,35 @@ from PIL import ImageDraw
 sys.path.append("libs")
 from utils import *
 
-# оверсемплинг
+# Oversampling.
 antialiasing = 3
 
-# минимальный отступ от края картинки
+# Minimal padding from image border.
 paddingMin = 12
 
-# размеры итогового изображения
+# Output image size.
 width = 1280
 height = 720 
 
-# количество символов
+# Symbol count in row and columns, respectively.
 countX = 50
 countY = 20
 
+# Font size in pt.
 fontSize = 30
 
 padding, interval = compute_params((width, height), paddingMin, fontSize, (countX, countY), antialiasing)
-
 img = Image.new("RGB", (width*antialiasing, height*antialiasing), (0,0,0))
 draw = ImageDraw.Draw(img)
 font = ImageFont.truetype("arial.ttf", fontSize*antialiasing)
-
 fromFile = argv_resolver(sys.argv)[0]
 outputDir = argv_resolver(sys.argv)[0][0:-4]
-
 if not(os.path.isdir(outputDir)):
   os.mkdir(outputDir)
-
 xpos = 0
 ypos = 0
 num = 1
-
+img.resize((width,height), Image.ANTIALIAS).save("/".join([outputDir, "0000.png"]))
 with open(fromFile) as f:
   while True:
     c = f.read(1)
