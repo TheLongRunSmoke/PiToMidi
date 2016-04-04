@@ -2,6 +2,7 @@
 
 Pi in musical representation. It sounds fun, right? I think so too, and wrote this python script. It's get a text file with many numbers and turn it in MIDI file. That file can be played with any synthesizer.
 
+[Video](https://www.youtube.com/watch?v=XEDdc4AZlxI)
 
 #### Using
 You need Python 2.7 for run this.
